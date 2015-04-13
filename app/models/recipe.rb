@@ -1,10 +1,8 @@
 class Recipe < ActiveRecord::Base
-	has_many :ingredients
-	has_many :yeasts, through: :ingredients
-	has_many :grains, through: :ingredients
-	has_many :hops, through: :ingredients
+	has_many :receipes_ingredients
+  has_many :ingredients, through: :receipes_ingredients
 	has_one :category
 
-	belongs_to :users
+	belongs_to :user
 
 end

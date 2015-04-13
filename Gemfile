@@ -17,7 +17,7 @@ gem 'devise'
 gem 'foundation-rails'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-rails'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'spring', '~>1.3.4'
 end

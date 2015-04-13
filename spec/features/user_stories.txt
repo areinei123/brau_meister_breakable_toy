@@ -1,0 +1,47 @@
+Trello Buckets
+  backlog, features that i intend to add
+  in process, features that im working on
+  under review, stuff that Omid is looking at
+  finished work, its done!
+
+As a user, 
+I want to be able to view the home page,
+So that I can bask in the gloriousness that is Fred's creation
+
+
+As a user, 
+I want to be able to log in,
+so that i can access all the features of Brau Meister
+
+
+As an authenticated user,
+I want to be able to go to the Recipe Maker
+so that i can start my brewing journey.
+
+As an authenticated user,
+I want to be able to see my recipe as I build it
+so that I can continue to keep with the theme of my recipe
+
+As an authenticated user,
+I want to be able to edit my recipe as i build it
+so that i can easily change my recipe
+
+As an authenticated user,
+i want to be able delete item from my recipe as i build it
+so that i can remove unwanted items
+
+As an authenticated user, 
+i want to be able to see basic beer calculations 
+so that i can approximate what my beer will turn out like
+
+As an authenticated user,
+I want to be able to email my recipe to myself,
+so that i dont look stupid when i go to the store without my checklist
+
+As an authenticated user, 
+I want to be able to share my recipes with the world
+so that others can view my recipe and despair
+
+As an authenticated user,
+I want to be able to log in with Facebook/Twitter/untapped/etc.
+because I am obsessed with socail media

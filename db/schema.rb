@@ -11,37 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328164631) do
+ActiveRecord::Schema.define(version: 20150411155847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "grains", force: :cascade do |t|
-    t.string   "name",              null: false
-    t.string   "grain_type",        null: false
-    t.float    "extract_potential", null: false
-    t.integer  "ingredients_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  create_table "hops", force: :cascade do |t|
-    t.string   "name",           null: false
-    t.float    "alpha_acid",     null: false
-    t.string   "origin",         null: false
-    t.integer  "ingredients_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "categories", force: :cascade do |t|
+    t.string  "category_name", null: false
+    t.integer "recipes_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.integer "recipes_id"
+    t.string "name"
+    t.string "type_class"
+    t.float  "extract_potential"
+    t.float  "alpha_acid"
+    t.float  "attenuation"
+  end
+
+  create_table "ingredients_recipes", id: false, force: :cascade do |t|
+    t.integer "recipe_id",     null: false
+    t.integer "ingredient_id", null: false
   end
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name",                       null: false
     t.boolean  "visibility", default: false
-    t.integer  "users_id"
+    t.integer  "batch_size",                 null: false
+    t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -65,14 +62,5 @@ ActiveRecord::Schema.define(version: 20150328164631) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "yeasts", force: :cascade do |t|
-    t.string   "name",           null: false
-    t.string   "yeast_type",     null: false
-    t.float    "attenuation",    null: false
-    t.integer  "ingredients_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
 
 end

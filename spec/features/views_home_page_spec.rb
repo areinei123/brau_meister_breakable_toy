@@ -1,6 +1,9 @@
 require 'rails_helper'
 
+
+
 feature 'view homepage' do
+
   context 'as a visitor' do
     scenario 'I want to see the home page' do
       visit root_path
@@ -19,8 +22,9 @@ feature 'view homepage' do
   end
 
   context 'as an authenticated user' do
-    before :each do
+    before(:each) do
       user = FactoryGirl.create(:user)
+
       visit new_user_session_path
 
       fill_in 'Email', with: user.email
@@ -28,7 +32,7 @@ feature 'view homepage' do
 
       click_button 'Log in'
     end
-
+    
     scenario 'I want to be able to make a recipe' do
 
       visit root_path

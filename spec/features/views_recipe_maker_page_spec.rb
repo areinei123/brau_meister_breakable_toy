@@ -2,8 +2,9 @@ require 'rails_helper'
 
 feature 'view recipe maker' do
   context 'as an authenticated user' do
-    before :each do
+    before(:each) do
       user = FactoryGirl.create(:user)
+
       visit new_user_session_path
 
       fill_in 'Email', with: user.email
@@ -11,18 +12,17 @@ feature 'view recipe maker' do
 
       click_button 'Log in'
     end
-
     scenario %{I want to view the recipe maker page} do
       visit root_path
       click_on 'Recipe Maker'
 
-      expect(page).to have_content('Build your recipe!')
+      expect(page).to have_content('Stage One')
 
     end
 
     scenario %{I want to be able to go back to the home page} do
       visit new_recipe_path
-      click_on 'Brau Meister'
+      click_on 'Logo'
 
       expect(page).to have_content('Public Recipes')
 
@@ -32,7 +32,9 @@ feature 'view recipe maker' do
     in my batch, so that I can make estimations about the OG and IBU.
     }do
       visit new_recipe_path
+      fill_in 'Recipe Title' , with: 'The Best Pale Ale'
       fill_in 'Batch Size in Gallons:', with:'5'
+      click_on 'Next Step'
 
       expect(page).to have_content('5 Gal. Batch')
     end
@@ -40,7 +42,7 @@ feature 'view recipe maker' do
     scenario %{I want to be able to look at all
     the grains I can add to my recipe
     } do
-      visit new_recipe_path
+      visit new_recipe_grain_path
       click_on 'Grains'
       expect(page).to have_content('Grain')
       expect(page).to have_content('Extract')
@@ -51,7 +53,7 @@ feature 'view recipe maker' do
     scenario %{I want to be able to look at all the hops
     I can add to my recipe
     } do
-      visit new_recipe_path
+      visit new_recipe_hop_path
       click_on 'Hops'
       expect(page).to have_content('U.S.')
       expect(page).to have_content('England')
@@ -64,7 +66,7 @@ feature 'view recipe maker' do
     scenario %{I want to be able to look at all the yeasts
     I can add to my recipe
     } do
-      visit new_recipe_path
+      visit new_recipe_yeast_path
       click_on 'Yeast'
       expect(page).to have_content('Ale')
       expect(page).to have_content('Wheat')

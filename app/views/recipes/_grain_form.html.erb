@@ -1,0 +1,13 @@
+<div class="row">
+  <%= form_tag ingredients_path, method: :get do %>
+    <h4>Grains</h4>
+    <%= select_tag(:name, options_from_collection_for_select(@grains, :id, :name), selected: :name, include_blank: "Select") %>
+    <h4>Extracts</h4>
+    <%= select_tag(:name, options_from_collection_for_select(@extracts, :id, :name), selected: :name, include_blank: "Select") %>
+    <h4>Adjuncts</h4>
+    <%= select_tag(:name, options_from_collection_for_select(@adjuncts, :id, :name), selected: :name, include_blank: "Select") %>
+    <h4>Sugars</h4>
+    <%= select_tag(:name, options_from_collection_for_select(@sugars, :id, :name), selected: :name, include_blank: "Select") %>
+    <%= submit_tag "Submit", class: "button radius" %>
+  <% end %>
+</div>

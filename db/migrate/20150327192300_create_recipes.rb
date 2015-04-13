@@ -3,9 +3,8 @@ class CreateRecipes < ActiveRecord::Migration
     create_table :recipes do |t|
       t.string :name, index:true, null:false
       t.boolean :visibility, default:false
-
-      t.belongs_to :users
-
+      t.integer :batch_size, null:false       
+      t.belongs_to :user
       t.timestamps null: false
     end
   end

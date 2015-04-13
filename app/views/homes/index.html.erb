@@ -1,4 +1,17 @@
-<%if current_user %>
-	<h1><%= link_to 'Recipe Maker', new_recipe_path %></h1>
-<%end%>
-<h1>Public Recipes</h1>
+<div class="row">
+  <div class="small-6 column">
+    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+      <%if current_user %>
+  	    <div class="recipe-maker-button">
+        <%= link_to 'Recipe Maker', new_recipe_path, class: "button large radius" %>
+      <% else %>
+        <div class="login-to-use">
+        <%= link_to "Log in to user the Recipe Maker", new_user_session_path, class: "button large alert" %>
+        <div>
+      <% end %>
+    </ul>
+  </div>
+</div>  
+<div class="row">
+  <h1>Public Recipes</h1>
+</div>
