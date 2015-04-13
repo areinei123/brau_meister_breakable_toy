@@ -24,8 +24,8 @@ feature 'view recipe maker' do
     in my batch, so that I can make estimations about the OG and IBU.
     }do
       visit new_recipe_path
-      fill_in 'Name' , with: 'The Best Pale Ale'
-      fill_in 'Batch size', with:'5'
+      fill_in 'Name', with: 'The Best Pale Ale'
+      fill_in 'Batch size', with: '5'
       click_on 'Add Recipe'
 
       expect(page).to have_content('The Best Pale Ale')

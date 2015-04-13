@@ -4,9 +4,9 @@ class IngredientsController < ApplicationController
   end
 
   def create
-  @recipe = Recipe.find(params[:recipe_id])
-  @ingredient = @recipe.ingredients.new(ingredient_params)
-  @ingredient.user = current_user
+    @recipe = Recipe.find(params[:recipe_id])
+    @ingredient = @recipe.ingredients.new(ingredient_params)
+    @ingredient.user = current_user
     if @ingredient.save
       flash[:notice] = "ingredient Added."
       redirect_to recipe_path(@recipe)
