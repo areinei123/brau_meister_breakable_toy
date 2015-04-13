@@ -1,7 +1,31 @@
 <div class="row">
-  <% @recipes.each do |recipe| %>
-    <%= link_to (recipe) do%>
-      <%= recipe.name %>
-    <% end %>
-  <% end %>
+  <div class="row">
+  <table>
+    <h3> Your Recipes </h3>
+    <thead>
+      <tr>
+        <th width="200">Recipe name</th>
+        <th width="200">Batch Size</th>
+        <th width="100">ABV</th>
+        <th width="100">IBU</th>
+        <th width="100">OG</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td>
+            <%= link_to (recipe) do %>
+              <%= recipe.name %>
+            <% end %>
+          </td>
+          <td><%= recipe.batch_size%> gallons </td>
+          <td>recipe.abv</td>
+          <td> recipe.ibu</td>
+          <td> recipe.og</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 </div>
