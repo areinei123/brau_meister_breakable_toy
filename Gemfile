@@ -21,3 +21,8 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring', '~>1.3.4'
 end
+
+group :test do
+  gem 'coveralls', require: false
+end
+
