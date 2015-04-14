@@ -2,13 +2,13 @@
   <%= form_for @recipe, :remote => true do |f| %>
     <%= f.fields_for :recipe_ingredients do |t| %>
       <h4>Grains</h4>
-      <%= t.select(:name, options_from_collection_for_select(@grains, :id, :name), selected: :name, include_blank: "Select") %>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Grain"), :id, :name, include_blank: "Select" %>
       <h4>Extracts</h4>
-      <%= t.select(:name, options_from_collection_for_select(@extracts, :id, :name), selected: :name, include_blank: "Select") %>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Extract"), :id, :name, include_blank: "Select" %>
       <h4>Adjuncts</h4>
-      <%= t.select(:name, options_from_collection_for_select(@adjuncts, :id, :name), selected: :name, include_blank: "Select") %>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Adjunct"), :id, :name, include_blank: "Select" %>
       <h4>Sugars</h4>
-      <%= t.select(:name, options_from_collection_for_select(@sugars, :id, :name), selected: :name, include_blank: "Select") %>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Sugars"), :id, :name, include_blank: "Select" %>
       <%= submit_tag "Submit", class: "button radius" %>
     <% end %>
   <% end %>
