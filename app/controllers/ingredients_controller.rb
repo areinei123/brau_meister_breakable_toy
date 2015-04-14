@@ -8,7 +8,7 @@ class IngredientsController < ApplicationController
     @ingredient = @recipe.ingredients.new(ingredient_params)
     @ingredient.user = current_user
     if @ingredient.save
-      flash[:notice] = "ingredient Added."
+      flash[:notice] = "Ingredient Added."
       redirect_to recipe_path(@recipe)
     else
       flash[:notice] = @ingredient.errors.full_messages.join("! ")

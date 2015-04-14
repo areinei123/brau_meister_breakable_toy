@@ -1,14 +1,18 @@
-<div class="row"
-<%= form_tag new_recipe_path, method: :get do %>
-  <h4>Weizen/Weisse/Wheat</h4>
-  <%= select_tag(:name, options_from_collection_for_select(@weisse, :id, :name), selected: :name, include_blank: "Select") %>
-  <h4>Lager</h4>
-  <%= select_tag(:name, options_from_collection_for_select(@lager, :id, :name), selected: :name, include_blank: "Select") %>
-  <h4>Ale</h4>
-  <%= select_tag(:name, options_from_collection_for_select(@ale, :id, :name), selected: :name, include_blank: "Select") %>
-  <h4>Belgian Ale</h4>
-  <%= select_tag(:name, options_from_collection_for_select(@belgian, :id, :name), selected: :name, include_blank: "Select") %>
-    <h4>Sour/Wild</h4>
-  <%= select_tag(:name, options_from_collection_for_select(@sour, :id, :name), selected: :name, include_blank: "Select") %>
-<% end %>
+<div class="row">
+  <%= form_for @recipe, :remote => true do |f| %>
+    <%= f.fields_for :recipe_ingredients do |t| %>
+      <h4>Wiesse</h4>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Wiesse"), :id, :name, include_blank: "Select" %>
+      <h4>Lager</h4>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Lager"), :id, :name, include_blank: "Select" %>
+      <h4>Ale</h4>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Ale"), :id, :name, include_blank: "Select" %>
+      <h4>Belgian Ale</h4>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Belgian Ale"), :id, :name, include_blank: "Select" %>
+      <h4>Sour</h4>
+      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Sour"), :id, :name, include_blank: "Select" %>
+
+    <% end %>
+    <%= f.submit %>
+  <% end %>
 </div>
