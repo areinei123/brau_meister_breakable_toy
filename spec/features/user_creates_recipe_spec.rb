@@ -19,7 +19,7 @@ feature 'Add ingredients to a recipe' do
       visit new_recipe_path
       click_on 'Grains'
       page.select 'Pilsner (2 Row)', :from => 'Grain'
-      fill_in 'Weight', with:'5'
+      fill_in 'Weight', with: '5'
       click_on 'Submit'
       page.select 'Light Dry', :from => 'Extract'
       fill_in 'Weight', with: '2.5'
@@ -33,19 +33,11 @@ feature 'Add ingredients to a recipe' do
       visit new_recipe_path
       click_on 'Hops'
       page.select 'Citra', :from => 'U.S.'
-      fill_in 'Weight', with:'1.5'
-      fill_in 'Time after boil', with: '15'
-      click_on 'Submit'
-      page.select 'Citra', :from => 'U.S.'
-      fill_in 'Weight', with:'1.5'
-      fill_in 'Time after boil', with: '30'
-      click_on 'Submit'
-      page.select 'Citra', :from => 'U.S.'
-      fill_in 'Weight', with:'1.5'
-      fill_in 'Time after boil', with: '45'
+      fill_in 'Weight', with: '1.5'
       click_on 'Submit'
 
       expect(page).to have_content('Estimated IBU:')
     end
+
   end
 end
