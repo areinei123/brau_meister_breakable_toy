@@ -16,30 +16,11 @@ feature 'view recipe maker' do
       visit root_path
       click_on 'Recipe Maker'
 
-      expect(page).to have_content('Stage One')
+      expect(page).to have_button('Add Recipe')
 
     end
 
-    scenario %{I want to be able to go back to the home page} do
-      visit new_recipe_path
-      click_on 'Logo'
-
-      expect(page).to have_content('Public Recipes')
-
-    end
-
-    scenario %{I want to be able to set the amount of water I want to be
-    in my batch, so that I can make estimations about the OG and IBU.
-    }do
-      visit new_recipe_path
-      fill_in 'Recipe Title' , with: 'The Best Pale Ale'
-      fill_in 'Batch Size in Gallons:', with:'5'
-      click_on 'Next Step'
-
-      expect(page).to have_content('5 Gal. Batch')
-    end
-
-    scenario %{I want to be able to look at all
+    pending %{I want to be able to look at all
     the grains I can add to my recipe
     } do
       visit new_recipe_grain_path
@@ -50,7 +31,7 @@ feature 'view recipe maker' do
       expect(page).to have_content('Sugar')
     end
 
-    scenario %{I want to be able to look at all the hops
+    pending %{I want to be able to look at all the hops
     I can add to my recipe
     } do
       visit new_recipe_hop_path
@@ -63,7 +44,7 @@ feature 'view recipe maker' do
       expect(page).to have_content('Slovenia')
     end
 
-    scenario %{I want to be able to look at all the yeasts
+    pending %{I want to be able to look at all the yeasts
     I can add to my recipe
     } do
       visit new_recipe_yeast_path
@@ -75,40 +56,5 @@ feature 'view recipe maker' do
       expect(page).to have_content('Sour')
     end
 
-    scenario %{I want to be able to have an estimated Original Gravity so that
-    I can get a sense for how strong my beer might be
-    } do
-      visit new_recipe_path
-      click_on 'Grains'
-      page.select 'Pilsner (2 Row)', :from => 'Grain'
-      fill_in 'Weight', with:'5'
-      click_on 'Add'
-      page.select 'Light Dry', :from => 'Extract'
-      fill_in 'Weight', with: '2.5'
-      click_on 'Add'
-      expect(page).to have_content('OG: 1.055')
-    end
-
-    scenario %{I want to be able to add hops to my recipe, in order to make
-    it more bitter and therefore somehow more palatable
-    } do
-      visit new_recipe_path
-      click_on 'Hops'
-      page.select 'Citra', :from => 'U.S.'
-      fill_in 'Weight', with:'1.5'
-      fill_in 'Time after boil', with: '15'
-      click_on 'Add'
-      page.select 'Citra', :from => 'U.S.'
-      fill_in 'Weight', with:'1.5'
-      fill_in 'Time after boil', with: '30'
-      click_on 'Add'
-      page.select 'Citra', :from => 'U.S.'
-      fill_in 'Weight', with:'1.5'
-      fill_in 'Time after boil', with: '45'
-      click_on 'Add'
-
-      expect(page).to have_content('Estimated IBU:')
-
-    end
   end
 end
