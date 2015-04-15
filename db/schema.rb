@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150411155847) do
 
   create_table "categories", force: :cascade do |t|
     t.string  "category_name", null: false
-    t.integer "recipes_id"
+    t.integer "recipe_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -29,10 +29,15 @@ ActiveRecord::Schema.define(version: 20150411155847) do
     t.float  "attenuation"
   end
 
-  create_table "ingredients_recipes", id: false, force: :cascade do |t|
-    t.integer "recipe_id",     null: false
-    t.integer "ingredient_id", null: false
+  create_table "lists", force: :cascade do |t|
+    t.integer  "recipe_id",                   null: false
+    t.integer  "ingredient_id",               null: false
+    t.float    "amount",        default: 1.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "lists", ["recipe_id", "ingredient_id"], name: "index_lists_on_recipe_id_and_ingredient_id", unique: true, using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name",                       null: false

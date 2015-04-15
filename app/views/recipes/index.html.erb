@@ -5,7 +5,8 @@
     <thead>
       <tr>
         <th width="200">Recipe name</th>
-        <th width="200">Batch Size</th>
+        <th width="100">Batch Size</th>
+        <th width="100">Category</th>
         <th width="100">ABV</th>
         <th width="100">IBU</th>
         <th width="100">OG</th>
@@ -15,11 +16,9 @@
       <% @recipes.each do |recipe| %>
         <tr>
           <td>
-            <%= link_to (recipe) do %>
-              <%= recipe.name %>
-            <% end %>
+            <%= link_to recipe.name, new_recipe_list_path(recipe.id) %>
           </td>
-          <td><%= recipe.batch_size%> gallons </td>
+          <td><%= recipe.batch_size %> gallons </td>
           <td>recipe.abv</td>
           <td> recipe.ibu</td>
           <td> recipe.og</td>

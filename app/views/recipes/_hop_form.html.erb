@@ -1,24 +1,34 @@
 <div class="row">
   <%= form_for @recipe, :remote => true do |f| %>
-    <%= f.fields_for :recipe_ingredients do |t| %>
-      <h4>U.S.A.</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
-      <h4>England</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
-      <h4>Australia</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
-      <h4>Germany</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
-      <h4>Czech Republic</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
-      <h4>Japan</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
-      <h4>New Zealand</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
-      <h4>Slovenia</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
+    <%= f.fields_for :list do |t| %>
+      <h5>America</h5>
+      <%= t.collection_select :us, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
+      
+      <h5>England</h5>
+      <%= t.collection_select :england, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
 
-      <%= submit_tag "Submit", class: "button radius" %>
+      <h5>Australia</h5>
+      <%= t.collection_select :australia, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
+
+      <h5>Germany</h5>
+      <%= t.collection_select :germany, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
+
+      <h5>Czech Republic</h5>
+      <%= t.collection_select :czech, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
+
+      <h5>Japan</h5>
+      <%= t.collection_select :japan, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
+
+      <h5>New Zealand</h5>
+      <%= t.collection_select :nz, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
+
+      <h5>Slovenia</h5>
+      <%= t.collection_select :slovenia, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
+      <%= t.label :hop_amount %>
+      <%= t.text_field :hop_amount %> in pounds
+
+      <%= f.submit "Submit", class: "button radius" %>
     <% end %>
   <% end %>
 </div>
+

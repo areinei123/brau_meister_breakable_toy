@@ -1,0 +1,43 @@
+<div class="row">
+  <h2><%= @recipe.name %></h2>
+  <h5>Build your recipe!</h5>
+  <% if current_user %>
+    <div class="instructions-body">
+      <ul class="accordion" data-accordion>
+        <li class="accordion-navigation" id="grain-tab">
+          <a href="#panel1a">Grains</a>
+          <div id="panel1a" class="content">
+            <%= render "grain_form" %>
+          </div>
+        </li>
+        <li class="accordion-navigation" id="hop-tab">
+          <a href="#panel2a">Hops</a>
+          <div id="panel2a" class="content">
+            <%= render "hop_form" %>
+          </div>
+        </li>
+        <li class="accordion-navigation" id="yeast-tab">
+          <a href="#panel3a">Yeast</a>
+          <div id="panel3a" class="content">
+            <%= render "yeast_form" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h5>The List</h5>
+    This is what your recipe currently contains
+    <ul>
+      <% @recipe_list.each do |list| %>
+        <% if list.ingredient_id > 0 && list.ingredient_id <= 72 %>
+          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> lbs.</li>
+        <% elsif list.ingredient_id > 72 && list.ingredient_id <= 118 %>
+          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> oz.</li>
+        <% else %>
+          <li><%= Ingredient.find(list.ingredient_id).name %></li> 
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    <h2> You must sign in to view this page! </h2>
+  <% end %>
+</div>

@@ -1,18 +1,18 @@
 <div class="row">
-  <%= form_for @recipe, :remote => true do |f| %>
-    <%= f.fields_for :recipe_ingredients do |t| %>
-      <h4>Wiesse</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Wiesse"), :id, :name, include_blank: "Select" %>
-      <h4>Lager</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Lager"), :id, :name, include_blank: "Select" %>
-      <h4>Ale</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Ale"), :id, :name, include_blank: "Select" %>
-      <h4>Belgian Ale</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Belgian Ale"), :id, :name, include_blank: "Select" %>
-      <h4>Sour</h4>
-      <%= t.collection_select :ingredient_id, Ingredient.where(type_class:"Sour"), :id, :name, include_blank: "Select" %>
-
+  <%= form_for @recipe do |f| %>
+    <%= f.fields_for :list do |t| %>
+      <h5>Weisse</h5>
+      <%= t.collection_select :weisse, Ingredient.where(type_class:"Weisse"), :id, :name, include_blank: "Select" %>
+      <h5>Lager</h5>
+      <%= t.collection_select :lager, Ingredient.where(type_class:"Lager"), :id, :name, include_blank: "Select" %>
+      <h5>Ale</h5>
+      <%= t.collection_select :ale, Ingredient.where(type_class:"Ale"), :id, :name, include_blank: "Select" %>
+      <h5>Belgian Ale</h5>
+      <%= t.collection_select :belgian, Ingredient.where(type_class:"Belgian Ale"), :id, :name, include_blank: "Select" %>
+      <h5>Sour</h5>
+      <%= t.collection_select :sour, Ingredient.where(type_class:"Sour"), :id, :name, include_blank: "Select" %>
+      <%= t.submit "Submit", class: "button radius" %>
     <% end %>
-    <%= f.submit %>
+   
   <% end %>
 </div>

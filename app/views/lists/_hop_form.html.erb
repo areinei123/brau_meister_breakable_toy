@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="america">
+    <%= form_for [@recipe, @list] do |f| %>
+      <h5>America</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="england">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>England</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="australia">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>Australia</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="germany">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>Germany</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="czech">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>Czech Republic</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="japan">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>Japan</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="zealand">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>New Zealand</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %>
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div> 
+  <div class="slovenia">
+    <%= form_for [@recipe, @list] do |f| %>  
+      <h5>Slovenia</h5>
+      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
+      <%= f.label "Amount in ounces" %>
+      <%= f.text_field :amount %> 
+      <%= f.submit "Submit", class: "button radius" %>
+    <% end %>
+  </div>
+</div>
+

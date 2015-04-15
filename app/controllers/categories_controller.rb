@@ -1,4 +1,10 @@
 class CategoriesController < ApplicationController
+  # def new
 
-  private
+  # end
+
+  # def create
+
+  # end
+  # private
 end
