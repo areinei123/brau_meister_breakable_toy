@@ -3,4 +3,3 @@ rvm:
   - 2.1.5
 before_script: 
   - psql -c 'create database brau_meister_test;' -U postgres
-  - RAILS_ENV=test && bundle exec rake app:db:seed
