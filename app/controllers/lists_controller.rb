@@ -22,10 +22,10 @@ class ListsController < ApplicationController
   end
   
   private
-    def list_params
-      params.require(:list).permit(
-        :recipe, :ingredient_id, :amount
-      )
-    end
 
+  def list_params
+    params.require(:list).permit(
+      :recipe, :ingredient_id, :amount
+    )
+  end
 end
