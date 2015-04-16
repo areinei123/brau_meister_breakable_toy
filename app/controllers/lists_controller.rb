@@ -20,6 +20,13 @@ class ListsController < ApplicationController
       render 'recipes/show'
     end
   end
+
+  def destroy
+   @recipe = Recipe.find(params[:recipe_id])
+   @list = List.find(params[:id])
+   @list.destroy
+   redirect_to new_recipe_list_path(@recipe)
+ end
   
   private
 

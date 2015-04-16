@@ -1,5 +1,5 @@
 class List < ActiveRecord::Base
-  has_and_belongs_to_many :recipes
-  has_and_belongs_to_many :ingredients
+  belongs_to :recipe
+  belongs_to :ingredient
   validates :amount, presence: true
 end

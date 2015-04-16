@@ -35,6 +35,8 @@
         <% else %>
           <li><%= Ingredient.find(list.ingredient_id).name %></li> 
         <% end %>
+
+        <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list.id), method: :delete, class: "button tiny radius" %>
       <% end %>
     </ul>
   <% else %>
