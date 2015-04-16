@@ -5,13 +5,13 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @ingredient = Ingredient.new
-    @ingredients = Ingredient.all
+    @list = List.new
   end
 
   def new
     @ingredients = Ingredient.all
     @recipe = Recipe.new
+    @list = List.new
   end
 
   def create

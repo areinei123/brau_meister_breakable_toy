@@ -2,36 +2,14 @@
   <h2>Build your recipe!</h2>
   <% if current_user %>
   <% unless @recipe.name != nil  %>
-    <%= form_for @recipe  do |t| %>
-      <%= t.label :name %>
-      <%= t.text_field :name %>
-      <%= t.label :batch_size %>
-      <%= t.text_field :batch_size %>
-      <%= t.submit "Add Recipe", class: "button radius" %>
+    <%= form_for [@recipe]  do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :batch_size %>
+      <%= f.text_field :batch_size %>
+      <%= f.submit "Add Recipe", class: "button radius" %>
     <% end %> 
   <% end %>
-  <div class="instructions-body">
-    <ul class="accordion" data-accordion>
-    <li class="accordion-navigation">
-      <a href="#panel1a">Grains</a>
-      <div id="panel1a" class="content active">
-        <%= render "grain_form"%>
-      </div>
-    </li>
-    <li class="accordion-navigation">
-      <a href="#panel2a">Hops</a>
-      <div id="panel2a" class="content">
-        <%= render "hop_form"%>
-      </div>
-    </li>
-    <li class="accordion-navigation">
-      <a href="#panel3a">Yeast</a>
-      <div id="panel3a" class="content">
-        <%= render "yeast_form" %>
-      </div>
-    </li>
-  </ul>
-  </div>
   <% else %>
     <h2> You must sign in to view this page! </h2>
   <% end %>

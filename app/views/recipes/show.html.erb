@@ -3,22 +3,20 @@
   <% if current_user %>
   <div class="instructions-body">
     <ul class="accordion" data-accordion>
-      <li class="accordion-navigation">
+      <li class="accordion-navigation" id="grain-tab">
         <a href="#panel1a">Grains</a>
-        <div id="panel1a" class="content active">
+        <div id="panel1a" class="content">
           <%= render "grain_form"%>
         </div>
       </li>
-      <li class="accordion-navigation">
+      <li class="accordion-navigation" id="hop-tab">
         <a href="#panel2a">Hops</a>
         <div id="panel2a" class="content">
-          <%= render "hop_form"%>
         </div>
       </li>
-      <li class="accordion-navigation">
+      <li class="accordion-navigation" id="yeast-tab">
         <a href="#panel3a">Yeast</a>
         <div id="panel3a" class="content">
-          <%= render "yeast_form" %>
         </div>
       </li>
     </ul>
