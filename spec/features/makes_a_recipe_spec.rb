@@ -33,8 +33,8 @@ feature 'Add ingredients to a recipe' do
         select 'Berliner Blend GB122', from:'list_ingredient_id'
         click_button 'Submit'
       end
-      expect(page).to have_content('Amarillo x3.0 oz.')
-      expect(page).to have_content('Pilsner (2 Row) x10.0 lbs')
+      expect(page).to have_content('Amarillo')
+      expect(page).to have_content('Pilsner (2 Row)')
       expect(page).to have_content('Berliner Blend GB122')
     end
   end
