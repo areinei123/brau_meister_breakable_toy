@@ -31,9 +31,7 @@
       <% @user_recipes.each do |recipe| %>
         <tr>
           <td>
-            <%= link_to (recipe) do %>
-              <%= recipe.name %>
-            <% end %>
+            <%= link_to recipe.name, new_recipe_list_path(recipe) %>
           </td>
           <td><%= recipe.batch_size%> gallons </td>
           <td>recipe.abv</td>
