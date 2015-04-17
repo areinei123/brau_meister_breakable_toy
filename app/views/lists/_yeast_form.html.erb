@@ -1,37 +1,37 @@
-<div class="row">
+<div class="row" id="yeast-form">
   <div class="weisse">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Weisse</h5>
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Weisse"), :id, :name, include_blank: "Select" %>
-      <%= f.submit "Submit", class: "button radius" %> 
+      <%= f.submit "Submit", class: "button tiny radius" %> 
     <% end %>
   </div>
   <div class="lager">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Lager</h5>
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Lager"), :id, :name, include_blank: "Select" %>
-      <%= f.submit "Submit", class: "button radius" %> 
+      <%= f.submit "Submit", class: "button tiny radius" %> 
     <% end %>
   </div>
   <div class="ale">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Ale</h5>
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Ale"), :id, :name, include_blank: "Select" %>
-      <%= f.submit "Submit", class: "button radius" %> 
+      <%= f.submit "Submit", class: "button tiny radius" %> 
     <% end %>
   </div>
   <div class="belgian">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Belgian Ale</h5>
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Belgian Ale"), :id, :name, include_blank: "Select" %>
-      <%= f.submit "Submit", class: "button radius" %> 
+      <%= f.submit "Submit", class: "button tiny radius" %> 
     <% end %>
   </div>
   <div class="sour">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Sour</h5>
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Sour"), :id, :name, include_blank: "Select" %>
-      <%= f.submit "Submit", class: "button radius" %> 
+      <%= f.submit "Submit", class: "button tiny radius" %> 
     <% end %>
   </div>
 </div>

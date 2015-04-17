@@ -1,24 +1,56 @@
+<div class="maker-background"></div>
+<div class="row not-home-page">
+<table>
+  <h3> Your Recipes </h3>
+  <thead>
+    <tr>
+      <th width="200">Recipe name</th>
+      <th width="100">Batch Size</th>
+      <th width="100">Category</th>
+      <th width="100">ABV</th>
+      <th width="100">IBU</th>
+      <th width="100">OG</th>
+      <th width="100">Edit/Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.where(user_id: current_user.id).each do |recipe| %>
+      <tr>
+        <td>
+          <%= link_to recipe.name, new_recipe_list_path(recipe.id) %>
+        </td>
+        <td><%= recipe.batch_size %> gallons </td>
+        <td> abv </td>
+        <td> ibu </td>
+        <td> og </td>
+        <td> (Delete)</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
 <div class="row">
-  <div class="row">
   <table>
-    <h3> Your Recipes </h3>
+    <h3> Public Recipes </h3>
     <thead>
       <tr>
         <th width="200">Recipe name</th>
-        <th width="100">Batch Size</th>
-        <th width="100">Category</th>
+        <th width="200">Batch Size</th>
         <th width="100">ABV</th>
         <th width="100">IBU</th>
         <th width="100">OG</th>
       </tr>
     </thead>
     <tbody>
-      <% @recipes.each do |recipe| %>
+      <% @recipes.where(visibility: true).each do |recipe| %>
         <tr>
           <td>
-            <%= link_to recipe.name, new_recipe_list_path(recipe.id) %>
+            <%= link_to (recipe) do %>
+              <%= recipe.name %>
+            <% end %>
           </td>
-          <td><%= recipe.batch_size %> gallons </td>
+          <td><%= recipe.batch_size%> gallons </td>
           <td>recipe.abv</td>
           <td> recipe.ibu</td>
           <td> recipe.og</td>
@@ -26,5 +58,4 @@
       <% end %>
     </tbody>
   </table>
-  </div>
 </div>
