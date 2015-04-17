@@ -4,7 +4,7 @@ feature 'Add ingredients to a recipe' do
   context 'As an authenticated user' do
     before(:each) do
       user = FactoryGirl.create(:user)
-      recipe = FactoryGirl.create(:recipe)
+      recipe = FactoryGirl.create(:recipe, user_id: user.id)
       visit new_user_session_path
 
       fill_in 'Email', with: user.email

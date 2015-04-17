@@ -14,11 +14,6 @@ feature 'view homepage' do
       visit root_path
       expect(page).to have_content('Sign In')
     end
-
-    scenario 'I want to be able to see public recipes' do
-      visit root_path
-      expect(page).to have_content('Public Recipes')
-    end
   end
 
   context 'as an authenticated user' do
@@ -42,8 +37,7 @@ feature 'view homepage' do
 
     scenario 'I want to be able to see public recipes and my recipes' do
       visit root_path
-      expect(page).to have_content('Your Recipes')
-      expect(page).to have_content('Public Recipes')
+      expect(page).to have_content('All Recipes')
     end
   end
 end

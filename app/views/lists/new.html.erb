@@ -32,11 +32,17 @@
     <ul>
       <% @recipe_list.each do |list| %>
         <% if list.ingredient_id > 0 && list.ingredient_id <= 72 %>
-          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> lbs.</li>
+          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> lbs.
+           <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
+          </li>
         <% elsif list.ingredient_id > 72 && list.ingredient_id <= 118 %>
-          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> oz.</li>
+          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> oz.
+          <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
+          </li>
         <% else %>
-          <li><%= Ingredient.find(list.ingredient_id).name %></li> 
+          <li><%= Ingredient.find(list.ingredient_id).name %>
+           <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
+          </li> 
         <% end %>
       <% end %>
     </ul>

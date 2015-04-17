@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'view recipe maker' do
   context 'as an authenticated user' do
       let!(:user) { FactoryGirl.create(:user) }
-      let!(:recipe) { FactoryGirl.create(:recipe) }
+      let!(:recipe) { FactoryGirl.create(:recipe, user_id: user.id) }
 
       before(:each) do  
         visit new_user_session_path
