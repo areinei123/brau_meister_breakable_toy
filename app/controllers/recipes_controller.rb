@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
   def index
-      @recipes = Recipe.all
+    if current_user
+      @user_recipes = Recipe.where(user_id: "#{current_user.id}")
+    end
+    @public_recipes = Recipe.where(visibility: true)
   end
 
   def show
