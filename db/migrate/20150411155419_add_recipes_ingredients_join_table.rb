@@ -4,7 +4,7 @@ class AddRecipesIngredientsJoinTable < ActiveRecord::Migration
       t.integer :recipe_id, null: false
       t.integer :ingredient_id, null: false
       t.float :amount, default: 1, null: false
-
+      t.integer :boil_time, default: 0, null: false
       t.timestamps
     end
       add_index :lists, [:recipe_id, :ingredient_id], unique: true

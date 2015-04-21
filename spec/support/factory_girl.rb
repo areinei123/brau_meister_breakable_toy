@@ -15,3 +15,12 @@ FactoryGirl.define do
     batch_size '5'
   end
 end
+
+FactoryGirl.define do
+  factory :list do
+    recipe_id 1
+    ingredient_id 1
+    amount 5
+    boil_time 0
+  end
+end 

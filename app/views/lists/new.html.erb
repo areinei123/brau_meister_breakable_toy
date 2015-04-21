@@ -1,52 +1,85 @@
-<div class="maker-background"></div>
-<div class="row not-home-page">
-  <h2><%= @recipe.name %></h2>
-  <h5>Build your recipe!</h5>
-  <% if current_user %>
-    <div class="instructions-body">
-      <ul class="accordion" data-accordion>
-        <li class="accordion-navigation" id="grain-tab">
-          <a href="#panel1a">Grains</a>
-          <div id="panel1a" class="content">
-            <%= render "grain_form" %>
-          </div>
-        </li>
-        <li class="accordion-navigation" id="hop-tab">
-          <a href="#panel2a">Hops</a>
-          <div id="panel2a" class="content">
-            <%= render "hop_form" %>
-          </div>
-        </li>
-        <li class="accordion-navigation" id="yeast-tab">
-          <a href="#panel3a">Yeast</a>
-          <div id="panel3a" class="content">
-            <%= render "yeast_form" %>
-          </div>
-        </li>
-      </ul>
-    </div>
-    Calculations go here
-
-    <h5>The List</h5>
-    This is what your recipe currently contains
-    <ul>
-      <% @recipe_list.each do |list| %>
-        <% if list.ingredient_id > 0 && list.ingredient_id <= 72 %>
-          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> lbs.
-           <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
-          </li>
-        <% elsif list.ingredient_id > 72 && list.ingredient_id <= 118 %>
-          <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> oz.
-          <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
-          </li>
-        <% else %>
-          <li><%= Ingredient.find(list.ingredient_id).name %>
-           <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
-          </li> 
+<div class="row">
+  <div class="large-2 column not-home-page side-bar">
+    <ul class="side-nav">
+      <li><h4>Vital Statistics</h4></li>
+      <li>Size: <%= @recipe.batch_size %> Gallons</li>
+      <li>
+        <% @total_gravity = 0 %>
+        <% @recipe.lists.each do |list| %>
+          <% if list.ingredient_id < 72 %>
+            <% @total_gravity += list.individual_gravity %>
+          <% end %>
         <% end %>
-      <% end %>
+        OG: <%= ((@total_gravity/1000) + 1).round(3) %>
+      </li>
+      <li>
+        <% @total_ibu = 0 %>
+        <% @recipe.lists.each do |list| %>
+          <% if list.ingredient_id > 71  && list.ingredient_id < 119 %>
+            <% @total_ibu += list.individual_ibu_level(@total_gravity) %>
+          <% end %>
+        <% end %>
+        IBU: <%= @total_ibu.round(1) %>
+      </li>
+      <li>
+        <% @total_abv = 0 %>
+        <% @recipe.lists.each do |list| %>
+          <% if list.ingredient_id > 118 %>
+            <% @total_abv = list.og_to_abv(@total_gravity) %>
+          <% end %>
+        <% end %>
+        ABV: <%= @total_abv.round(2) %>%
+      </li>
     </ul>
-  <% else %>
-    <h2> You must sign in to view this page! </h2>
-  <% end %>
+  </div>
+  <div class="large-9 column not-home-page">
+    <h2><%= @recipe.name %></h2>
+    <h5>Build your recipe!</h5>
+    <% if current_user %>
+      <div class="instructions-body">
+        <ul class="accordion" data-accordion>
+          <li class="accordion-navigation" id="grain-tab">
+            <a href="#panel1a">Grains</a>
+            <div id="panel1a" class="content">
+              <%= render "grain_form" %>
+            </div>
+          </li>
+          <li class="accordion-navigation" id="hop-tab">
+            <a href="#panel2a">Hops</a>
+            <div id="panel2a" class="content">
+              <%= render "hop_form" %>
+            </div>
+          </li>
+          <li class="accordion-navigation" id="yeast-tab">
+            <a href="#panel3a">Yeast</a>
+            <div id="panel3a" class="content">
+              <%= render "yeast_form" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <h5>The List</h5>
+      This is what your recipe currently contains
+      <ul>
+        <% @recipe.lists.each do |list| %>
+          <% if list.ingredient_id > 0 && list.ingredient_id <= 72 %>
+            <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> lbs.
+             <%= link_to "(Delete)", recipe_list_path(@recipe, list), method: :delete %>
+            </li>
+          <% elsif list.ingredient_id > 72 && list.ingredient_id <= 118 %>
+            <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> oz.
+            <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
+            </li>
+          <% else %>
+            <li><%= Ingredient.find(list.ingredient_id).name %>
+             <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
+            </li> 
+          <% end %>
+        <% end %>
+      </ul>
+      <%= link_to "Done", recipes_path, class: "button radius" %>
+    <% else %>
+      <h2> You must sign in to view this page! </h2>
+    <% end %>
+  </div>
 </div>
