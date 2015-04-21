@@ -56,7 +56,6 @@
         1,
         2,
         null,
-        null,
         null
       ],
       "/Users/frederickchapman/Desktop/brau_meister/app/models/recipe.rb": [
@@ -69,20 +68,6 @@
         1,
         null,
         1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/frederickchapman/Desktop/brau_meister/app/controllers/application_controller.rb": [
@@ -188,6 +173,6 @@
         null
       ]
     },
-    "timestamp": 1429649907
+    "timestamp": 1429651734
   }
 }
