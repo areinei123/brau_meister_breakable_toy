@@ -10,7 +10,7 @@ class ListsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @recipe_list = List.where(recipe_id: @recipe.id).sort_by {|list| list.ingredient_id}
+    @recipe_list = List.where(recipe_id: @recipe.id).sort_by { |list| list.ingredient_id }
     @list = @recipe.lists.new(list_params)
     if @list.save
       flash[:notice] = "Ingredient Added."

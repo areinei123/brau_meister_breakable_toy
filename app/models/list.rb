@@ -1,7 +1,7 @@
 class List < ActiveRecord::Base
   belongs_to :recipe
   belongs_to :ingredient
-  validates :amount, presence: true, numericality: {greater_than: 0}
+  validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :ingredient_id, presence: true
 
   def individual_gravity
@@ -17,11 +17,10 @@ class List < ActiveRecord::Base
   end
 
   def individual_ibu_level(gravity)
-    ( self.amount * (0.30 * self.boil_time) * (Ingredient.find(self.ingredient_id).alpha_acid/100) * 7490) / (Recipe.find(self.recipe_id).batch_size * (1 + (gravity / 0.5)))
+    (self.amount * (0.30 * self.boil_time) * (Ingredient.find(self.ingredient_id).alpha_acid / 100) * 7490) / (Recipe.find(self.recipe_id).batch_size * (1 + (gravity / 0.5)))
   end
 
   def og_to_abv(gravity)
-    (gu_to_og(gravity) - gu_to_og(gravity * ((100 - Ingredient.find(self.ingredient_id).attenuation )/ 100))) * 131
+    (gu_to_og(gravity) - gu_to_og(gravity * ((100 - Ingredient.find(self.ingredient_id).attenuation ) / 100))) * 131
   end
-
 end
