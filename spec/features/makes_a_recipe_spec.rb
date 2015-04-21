@@ -12,7 +12,7 @@ feature 'Add ingredients to a recipe' do
 
       click_button 'Log in'
     end
-    scenario %{I want to be able to add grains to my recipe and i want 
+    scenario %{I want to be able to add grains to my recipe and i want
       to be able to take them away as well
     } do
       load Rails.root + "db/seeds.rb" 
@@ -20,7 +20,7 @@ feature 'Add ingredients to a recipe' do
       fill_in "recipe_name", with: "Pale Ale"
       fill_in "recipe_batch_size", with: 10
       click_on "Add Recipe"
-      click_on "Pale Ale" 
+      click_on "Pale Ale"
       within("//div[@class='grain']") do
         select 'Pilsner (2 Row)', from: "list_ingredient_id"
         fill_in 'list_amount', with: 10
@@ -28,7 +28,6 @@ feature 'Add ingredients to a recipe' do
       end
 
       expect(page).to have_content('Pilsner (2 Row)')
-
 
       click_link '(Delete)'
       expect(page).to_not have_content('Pilsner (2 Row) x10lbs.')
