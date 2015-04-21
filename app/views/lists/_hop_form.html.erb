@@ -5,6 +5,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -14,6 +16,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -23,6 +27,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -32,6 +38,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -41,6 +49,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -50,6 +60,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -59,6 +71,8 @@
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
       <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %>
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div> 
@@ -67,7 +81,9 @@
       <h5>Slovenia</h5>
       <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
       <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %> 
+      <%= f.text_field :amount %>
+      <%= f.label "Boil Time (typically minutes til end of boil)" %>
+      <%= f.text_field :boil_time %> 
       <%= f.submit "Submit", class: "button tiny radius" %>
     <% end %>
   </div>

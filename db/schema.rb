@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150411155847) do
     t.integer  "recipe_id",                   null: false
     t.integer  "ingredient_id",               null: false
     t.float    "amount",        default: 1.0, null: false
+    t.integer  "boil_time",     default: 0,   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

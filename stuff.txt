@@ -1,0 +1,5 @@
+<% @total_gravity = 0 %>
+<% @recipe_list.each do |list| %>
+  <% @total_gravity += list.ingredient_gravity %>
+<% end %>  
+<%= @total_gravity %>
