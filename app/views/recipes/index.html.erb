@@ -1,107 +1,56 @@
-<div class="maker-background"></div>
-<div class="row not-home-page">
-<table class="your-recipes">
-  <h3> Your Recipes </h3>
-  <thead>
-    <tr>
-      <th width="200">Recipe name</th>
-      <th width="100">Batch Size</th>
-      <th width="100">ABV</th>
-      <th width="100">IBU</th>
-      <th width="100">OG</th>
-      <th width="100">Edit/Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @recipes.where(user_id: current_user.id).each do |recipe| %>
-      <tr>
-        <td>
-          <%= link_to recipe.name, new_recipe_list_path(recipe.id) %>
-        </td>
-        <td><%= recipe.batch_size %> gallons </td>
-        <td> 
-          <% @total_gravity = 0 %>
-          <% recipe.lists.each do |list| %>
-            <% if list.ingredient_id < 72 %>
-              <% @total_gravity += list.individual_gravity %>
-            <% end %>
-          <% end %>
-          OG: <%= ((@total_gravity/1000) + 1).round(3) %>
-        </td>
-        <td> 
-          <% @total_ibu = 0 %>
-          <% recipe.lists.each do |list| %>
-            <% if list.ingredient_id > 71  && list.ingredient_id < 119 %>
-              <% @total_ibu += list.individual_ibu_level(@total_gravity) %>
-            <% end %>
-          <% end %>
-        IBU: <%= @total_ibu.round(1) %>
-        </td>
-        <td>
-          <% @total_abv = 0 %>
-          <% recipe.lists.each do |list| %>
-            <% if list.ingredient_id > 118 %>
-              <% @total_abv = list.og_to_abv(@total_gravity) %>
-            <% end %>
-          <% end %>
-          ABV: <%= @total_abv.round(2) %>%
-        </td>
-        <td> <%= link_to "(Delete)", recipe_path(recipe.id), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-
-<div class="row not-home-page">
-  <table class="public-recipes">
-    <h3> Public Recipes </h3>
-    <thead>
-      <tr>
-        <th width="200">Recipe name</th>
-        <th width="200">Batch Size</th>
-        <th width="100">ABV</th>
-        <th width="100">IBU</th>
-        <th width="100">OG</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @recipes.where(visibility: true).each do |recipe| %>
+  <div class="row recipe-maker-button">
+    <%= link_to 'Recipe Maker', new_recipe_path, class: "button large radius" %>
+  </div>
+  <div class="row not-home-page">
+    <table class="your-recipes">
+      <h3> Your Recipes </h3>
+      <thead>
         <tr>
-        <td>
-          <%= link_to recipe.name, new_recipe_list_path(recipe.id) %>
-        </td>
-        <td><%= recipe.batch_size %> gallons </td>
-        <td> 
-          <% @total_gravity = 0 %>
-          <% recipe.lists.each do |list| %>
-            <% if list.ingredient_id < 72 %>
-              <% @total_gravity += list.individual_gravity %>
-            <% end %>
-          <% end %>
-          OG: <%= ((@total_gravity/1000) + 1).round(3) %>
-        </td>
-        <td> 
-          <% @total_ibu = 0 %>
-          <% recipe.lists.each do |list| %>
-            <% if list.ingredient_id > 71  && list.ingredient_id < 119 %>
-              <% @total_ibu += list.individual_ibu_level(@total_gravity) %>
-            <% end %>
-          <% end %>
-        IBU: <%= @total_ibu.round(1) %>
-        </td>
-        <td>
-          <% @total_abv = 0 %>
-          <% recipe.lists.each do |list| %>
-            <% if list.ingredient_id > 118 %>
-              <% @total_abv = list.og_to_abv(@total_gravity) %>
-            <% end %>
-          <% end %>
-          ABV: <%= @total_abv.round(2) %>%
-        </td>
-        <td> <%= link_to "(Delete)", recipe_path(recipe.id), method: :delete %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+          <th width="225">Recipe name</th>
+          <th width="125">Batch Size</th>
+          <th width="125">ABV</th>
+          <th width="125">IBU</th>
+          <th width="125">OG</th>
+          <th width="125">Remove Recipe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipes.where(user_id: current_user.id).each do |recipe| %>
+          <tr>
+            <td>
+              <%= link_to recipe.name, new_recipe_list_path(recipe.id) %>
+            </td>
+            <td><%= recipe.batch_size %> gallons </td>
+            <td> 
+              <% @total_gravity = 0 %>
+              <% recipe.lists.each do |list| %>
+                <% if list.ingredient_id < 72 %>
+                  <% @total_gravity += list.individual_gravity %>
+                <% end %>
+              <% end %>
+              OG: <%= ((@total_gravity/1000) + 1).round(3) %>
+            </td>
+            <td> 
+              <% @total_ibu = 0 %>
+              <% recipe.lists.each do |list| %>
+                <% if list.ingredient_id > 71  && list.ingredient_id < 119 %>
+                  <% @total_ibu += list.individual_ibu_level(@total_gravity) %>
+                <% end %>
+              <% end %>
+            IBU: <%= @total_ibu.round(1) %>
+            </td>
+            <td>
+              <% @total_abv = 0 %>
+              <% recipe.lists.each do |list| %>
+                <% if list.ingredient_id > 118 %>
+                  <% @total_abv = list.og_to_abv(@total_gravity) %>
+                <% end %>
+              <% end %>
+              ABV: <%= @total_abv.round(2) %>%
+            </td>
+            <td> <%= link_to "(Delete)", recipe_path(recipe.id), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>  

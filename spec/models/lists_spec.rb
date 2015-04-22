@@ -7,7 +7,7 @@ end
 
 describe "individual_gravity" do
   it "should calculate original gravity" do
-    load Rails.root + "db/seeds.rb"
+    load Rails.root + "db/seeds.rb" 
     recipe = FactoryGirl.create(:recipe)
     list = FactoryGirl.create(:list, recipe_id: recipe.id, ingredient_id: 483)
     expect(list.individual_gravity).to eq(19.439999999999937)

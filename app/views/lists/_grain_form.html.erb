@@ -2,38 +2,77 @@
   <div class="grain">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Grains</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Grain"), :id, :name, include_blank: "Select" %>
-
-      <%= f.label "Amount(in pounds)" %>
-      <%= f.text_field :amount %>
-      <%= f.submit "Submit", class: "button tiny radius grains" %>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Grain"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label "Amount(pounds)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius grains" %>
+        </div>
+      </div>
     <% end %>
   </div>
   <div class="extract">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Extracts</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Extract"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount(in pounds)" %>
-      <%= f.text_field :amount %>
-      <%= f.submit "Submit", class: "button tiny radius grains" %>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Extract"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label "Amount(pounds)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius grains" %>
+        </div>
+      </div>
     <% end %>
   </div>
   <div class="adjunct">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Adjuncts</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Adjunct"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount(in pounds)" %>
-      <%= f.text_field :amount %>
-      <%= f.submit "Submit", class: "button tiny radius grains" %>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Adjunct"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label "Amount(pounds)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius grains" %>
+        </div>
+      </div>
     <% end %>
   </div>
   <div class="sugar">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Sugars</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Sugar"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount(in pounds)" %>
-      <%= f.text_field :amount %>
-      <%= f.submit "Submit", class: "button tiny radius grains" %>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Sugar"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label "Amount(pounds)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius grains" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

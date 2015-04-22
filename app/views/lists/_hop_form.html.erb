@@ -2,90 +2,201 @@
   <div class="america">
     <%= form_for [@recipe, @list] do |f| %>
       <h5>America</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="england">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>England</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="australia">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>Australia</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="germany">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>Germany</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="czech">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>Czech Republic</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="japan">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>Japan</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="zealand">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>New Zealand</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %>
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div> 
   <div class="slovenia">
     <%= form_for [@recipe, @list] do |f| %>  
       <h5>Slovenia</h5>
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
-      <%= f.label "Amount in ounces" %>
-      <%= f.text_field :amount %>
-      <%= f.label "Boil Time (typically minutes til end of boil)" %>
-      <%= f.text_field :boil_time %> 
-      <%= f.submit "Submit", class: "button tiny radius" %>
+      <div class="row">
+        <div class="small-4 columns">
+          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Amount (oz)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :amount %>
+        </div>
+        <div class="small-2 columns form-label">
+          <%= f.label "Boil Time (minutes)" %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.text_field :boil_time %>
+        </div> 
+        <div class="small-2 columns">
+          <%= f.submit "Submit", class: "button tiny radius" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
-

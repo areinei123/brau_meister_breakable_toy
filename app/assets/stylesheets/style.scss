@@ -9,6 +9,7 @@ $hop: #5d8d5d;
 $hop-hover: #547f54;
 $yeast: #C1693C;
 $yeast-hover: #AE5E36;
+$straw: #FAEFDC;
 
 // General Styling   //
 
@@ -46,24 +47,24 @@ $yeast-hover: #AE5E36;
 .recipe-maker-button {
   
   .button {
-    background-color: #A32900;
+    background-color: $home-bttn;
     margin: 3rem;
   }
 
   .button:hover {
-    background-color: #621900;
+    background-color: $home-bttn-hover;
   }
 }
 
 .login-to-use {
   
   .button {
-    background-color: #A32900;
+    background-color: $home-bttn;
     margin: 3rem;
   }
 
   .button:hover {
-    background-color: #621900;
+    background-color: $home-bttn-hover;
   }
 }
 
@@ -137,4 +138,45 @@ $yeast-hover: #AE5E36;
 
 #grain-form {
   border-style: none;
+}
+
+.alert-box {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  font-weight: normal;
+  margin-bottom: 0;
+  position: relative;
+  padding: 0.875rem 1.5rem 0.875rem 0.875rem;
+  font-size: 0.8125rem;
+  transition: opacity 300ms ease-out;
+  background-color: $home-bttn;
+  border-color: $home-bttn;
+  color: #FFFFFF;
+}
+
+.data-padding-box {
+  background-color: $straw;
+  margin-left: 12%;
+  margin-right: 12%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+.your-recipes tr td {
+  text-align: center;
+}
+
+.form-label {
+  text-align: right;
+  padding: 0;
 }

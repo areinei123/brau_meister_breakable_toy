@@ -8,12 +8,14 @@
 </head>
 <body>
   <div class="maker-background"></div>
+  <div class="data-padding-box"></div>
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">Brau Meister</a></h1>
       </li>
     </ul>
+    
     <section class="top-bar-section">
       <ul class="left">
         <% if current_user %>
@@ -39,10 +41,11 @@
     </div>  
   <%- end -%>
 
+  
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
-
+  
 </body>
 </html>
