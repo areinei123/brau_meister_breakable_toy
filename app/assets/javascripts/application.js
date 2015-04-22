@@ -16,3 +16,15 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$('.flash').fadeIn(function() {
+    setTimeout(function() {
+        $('.flash').fadeOut();
+    }, '3000');
+});
+
+$('.alert-box').fadeIn(function() {
+    setTimeout(function() {
+        $('.alert-box').fadeOut();
+    }, '3000');
+});
