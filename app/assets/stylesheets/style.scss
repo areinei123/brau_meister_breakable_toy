@@ -1,6 +1,7 @@
-$main-font: 'Berkshire Swash', cursive;
+$main-font: 'Nunito', sans-serif;
+$home-font: 'Berkshire Swash', cursive;
 $fallback: #cccccc;
-$home-font: #d68533;
+$home-font-color: #d68533;
 $home-bttn: #a32900;
 $home-bttn-hover: #621900;
 $grain: #ebc633;
@@ -33,8 +34,8 @@ $straw: #FAEFDC;
 // Home page styling //
 
 .font-pretty {
-  font-family: $main-font;
-  color: $home-font;
+  font-family: $home-font;
+  color: $home-font-color;
   font-size: 450%;
 
   &.smaller {
@@ -53,6 +54,27 @@ $straw: #FAEFDC;
 
   .button:hover {
     background-color: $home-bttn-hover;
+  }
+
+  a {
+    font-family: $main-font;
+  }
+}
+
+#new_list {
+  div {
+    
+    div:nth-child(4) > input {
+      background-color: $home-bttn
+    }
+
+    div:nth-child(6) > input {
+      background-color: $home-bttn
+    }
+  }
+  
+  div.small-2.columns > button {
+    background-color: $home-bttn
   }
 }
 
@@ -76,8 +98,39 @@ $straw: #FAEFDC;
   padding: 1rem;
 
   table {
-   
+    font-family: $main-font;
     align:center;
+  }
+
+  ul li{
+    font-family: $main-font;
+  }
+
+  instructions-body{
+    font-family: $main-font;
+  }
+
+  h2 {
+    font-family: $main-font;
+  }
+
+  h3 {
+    font-family: $main-font;
+  }
+
+  h5 {
+    font-family: $main-font;
+  }
+
+  #grain-tab > a {
+    font-family: $main-font;
+  }
+
+  #hop-tab > a {
+    font-family: $main-font;
+  }
+  #yeast-tab > a {
+    font-family: $main-font;
   }
 }
 
