@@ -2,7 +2,7 @@
 <div class="row">
   <div class="large-2 column not-home-page side-bar">
     <ul class="side-nav">
-      <li><h4>Vital Statistics</h4></li>
+      <li id="vital-stats"><h4>Vital Statistics</h4></li>
       <li>Size: <%= @recipe.batch_size %> Gallons</li>
       <li>
         <% @total_gravity = 0 %>
@@ -78,9 +78,9 @@
           <% end %>
         <% end %>
       </ul>
-      <%= link_to "Done", recipes_path, class: "button radius" %>
+      <%= link_to "Done", recipes_path, class: "button radius", id: "End" %>
     <% else %>
       <h2> You must sign in to view this page! </h2>
     <% end %>
   </div>
-  </div>
+</div>
