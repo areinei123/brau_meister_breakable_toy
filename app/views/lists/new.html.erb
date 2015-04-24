@@ -3,15 +3,10 @@
   <div class="large-2 column not-home-page side-bar">
     <ul class="side-nav">
       <li id="vital-stats"><h4>Vital Statistics</h4></li>
+      <% @total_gravity = 0 %>
       <li>Size: <%= @recipe.batch_size %> Gallons</li>
       <li>
-        <% @total_gravity = 0 %>
-        <% @recipe.lists.each do |list| %>
-          <% if list.ingredient_id < 72 %>
-            <% @total_gravity += list.individual_gravity %>
-          <% end %>
-        <% end %>
-        OG: <%= ((@total_gravity/1000) + 1).round(3) %>
+        OG: <%= calculate_gravity %>
       </li>
       <li>
         <% @total_ibu = 0 %>
@@ -74,7 +69,7 @@
           <% else %>
             <li><%= Ingredient.find(list.ingredient_id).name %>
              <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
-            </li> 
+            </li>
           <% end %>
         <% end %>
       </ul>
