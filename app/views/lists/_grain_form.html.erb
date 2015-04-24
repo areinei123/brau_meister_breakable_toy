@@ -4,7 +4,7 @@
       <h5>Grains</h5>
       <div class="row">
         <div class="small-6 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Grain"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Grain"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns">
           <%= f.text_field :amount %>
@@ -23,7 +23,7 @@
       <h5>Extracts</h5>
       <div class="row">
         <div class="small-6 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Extract"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Extract"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns">
           <%= f.text_field :amount %>
@@ -42,7 +42,7 @@
       <h5>Adjuncts</h5>
       <div class="row">
         <div class="small-6 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Adjunct"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Adjunct"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns">
           <%= f.text_field :amount %>
@@ -61,7 +61,7 @@
       <h5>Sugars</h5>
       <div class="row">
         <div class="small-6 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Sugar"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Sugar"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns">
           <%= f.text_field :amount %>
