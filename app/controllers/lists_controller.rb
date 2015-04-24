@@ -3,7 +3,7 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  def new 
+  def new
     @recipe = Recipe.find(params[:recipe_id])
     @list = List.new
   end
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
     @list.destroy
     redirect_to new_recipe_list_path(@recipe)
   end
-  
+
   private
 
   def list_params
