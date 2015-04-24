@@ -4,7 +4,7 @@
       <h5>America</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"U.S."), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"U.S."), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -29,7 +29,7 @@
       <h5>England</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"England"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"England"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -54,7 +54,7 @@
       <h5>Australia</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Australia"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Australia"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -79,7 +79,7 @@
       <h5>Germany</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Germany"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Germany"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -104,7 +104,7 @@
       <h5>Czech Republic</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Czech Republic"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Czech Republic"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -129,7 +129,7 @@
       <h5>Japan</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Japan"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Japan"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -154,7 +154,7 @@
       <h5>New Zealand</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"New Zealand"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"New Zealand"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>
@@ -179,7 +179,7 @@
       <h5>Slovenia</h5>
       <div class="row">
         <div class="small-4 columns">
-          <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Slovenia"), :id, :name, include_blank: "Select" %>
+          <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Slovenia"), :id, :name, include_blank: "Select" %>
         </div>
         <div class="small-2 columns form-label">
           <%= f.label "Amount (oz)" %>

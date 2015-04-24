@@ -4,7 +4,7 @@
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Weisse</h5>
       <div class="small-8 columns">
-      <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Weisse"), :id, :name, include_blank: "Select" %>
+      <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Weisse"), :id, :name, include_blank: "Select" %>
       </div>
       <div class="small-2 columns">
       <%= f.submit "Submit", class: "button tiny radius" %>
@@ -17,7 +17,7 @@
       <%= form_for [@recipe, @list] do |f| %>
       <h5>Lager</h5>
       <div class="small-8 columns">
-        <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Lager"), :id, :name, include_blank: "Select" %>
+        <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Lager"), :id, :name, include_blank: "Select" %>
       </div>
       <div class="small-2 columns">
         <%= f.submit "Submit", class: "button tiny radius" %>
@@ -31,7 +31,7 @@
       <%= form_for [@recipe, @list] do |f| %>
       <h5>Ale</h5>
       <div class="small-8 columns">
-        <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Ale"), :id, :name, include_blank: "Select" %>
+        <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Ale"), :id, :name, include_blank: "Select" %>
       </div>
       <div class="small-2 columns">
         <%= f.submit "Submit", class: "button tiny radius" %>
@@ -45,7 +45,7 @@
       <%= form_for [@recipe, @list] do |f| %>
       <h5>Belgian Ale</h5>
       <div class="small-8 columns">
-        <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Belgian Ale"), :id, :name, include_blank: "Select" %>
+        <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Belgian Ale"), :id, :name, include_blank: "Select" %>
       </div>
       <div class="small-2 columns">
         <%= f.submit "Submit", class: "button tiny radius" %>
@@ -58,7 +58,7 @@
     <%= form_for [@recipe, @list] do |f| %>
       <h5>Sour</h5>
       <div class="small-8 columns">
-        <%= f.collection_select :ingredient_id, Ingredient.where(type_class:"Sour"), :id, :name, include_blank: "Select" %>
+        <%= f.collection_select :ingredient_id, Ingredient.where(sub_type:"Sour"), :id, :name, include_blank: "Select" %>
       </div>
       <div class="small-2 columns">
         <%= f.submit "Submit", class: "button tiny radius" %>
