@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411155847) do
+ActiveRecord::Schema.define(version: 20150424150837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 20150411155847) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.string "type_class"
     t.float  "extract_potential"
     t.float  "alpha_acid"
     t.float  "attenuation"
+    t.string "main_class"
+    t.string "sub_type"
   end
 
   create_table "lists", force: :cascade do |t|
