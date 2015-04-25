@@ -5,13 +5,13 @@
       <li id="vital-stats"><h4>Vital Statistics</h4></li>
       <li>Size: <%= @recipe.batch_size %> Gallons</li>
       <li>
-        OG: <%= @recipe.total_gravity %>
+        OG: <%= @recipe.total_gravity.round(3) %>
       </li>
       <li>
-        IBU: <%  %>
+        IBU: <%= @recipe.total_ibu.round(1) %>
       </li>
       <li>
-        ABV: <% %>%
+        ABV: <%= @recipe.total_abv.round(2) %>%
       </li>
     </ul>
   </div>
@@ -45,11 +45,11 @@
       <h5>This is what your recipe currently contains:</h5>
       <ul>
         <% @recipe.lists.each do |list| %>
-          <% if list.ingredient_id > 0 && list.ingredient_id <= 72 %>
+          <% if list.ingredient.is_a_grain? %>
             <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> lbs.
              <%= link_to "(Delete)", recipe_list_path(@recipe, list), method: :delete %>
             </li>
-          <% elsif list.ingredient_id > 72 && list.ingredient_id <= 118 %>
+          <% elsif list.ingredient.is_a_hop? %>
             <li><%= Ingredient.find(list.ingredient_id).name %> x<%= list.amount %> oz.
             <%= link_to "(Delete)", recipe_list_path(list.recipe_id, list), method: :delete %>
             </li>
