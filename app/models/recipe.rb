@@ -39,7 +39,7 @@ class Recipe < ActiveRecord::Base
   def total_abv
     @total_abv = 0
     lists.each do |list|
-      if list.ingredient.is_a_yeast
+      if list.ingredient.is_a_yeast?
         @total_abv = list.og_to_abv(@total_gravity)
       end
     end

@@ -7,3 +7,12 @@ Brau Meister
 The premier homebrewers recipe builder.
 
 Ruby(v 2.0.0) on Rails 4 (v 4.2.1)
+
+Clone the repo, run bundle, migrate and seed the database, and you have your very own beer recipe maker.
+
+Recipe maker requires that you sign in using an email and a password.
+
+After creating a recipe with a name and a batch size, you can start adding ingredients.
+Adding ingredients one at a time is much preffered, so hit the submit button whenever you want to add something.
+
+Thanks for checking it out!
