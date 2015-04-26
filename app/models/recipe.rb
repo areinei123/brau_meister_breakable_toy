@@ -18,10 +18,6 @@ class Recipe < ActiveRecord::Base
     (@total_gravity / 1000) + 1
   end
 
-  # def individual_ibu_level(gravity)
-  #   (self.amount * (0.30 * self.boil_time) * (Ingredient.find(self.ingredient_id).alpha_acid / 100) * 7490) / (Recipe.find(self.recipe_id).batch_size * (1 + (gravity / 0.5)))
-  # end
-
   def total_ibu
     @total_ibu = 0
     lists.each do |list|
@@ -31,10 +27,6 @@ class Recipe < ActiveRecord::Base
     end
     @total_ibu
   end
-
-  # def og_to_abv(gravity)
-  #   (gu_to_og(gravity) - gu_to_og(gravity * ((100 - Ingredient.find(self.ingredient_id).attenuation ) / 100))) * 131
-  # end
 
   def total_abv
     @total_abv = 0
